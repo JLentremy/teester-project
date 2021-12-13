@@ -1,24 +1,80 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Informations from "./components/Informations";
+import { ItemProps } from "./components/Informations/types";
+import Navbar from "./components/Navbar";
+import Profile from "./components/Profile";
+import { InfosProps, ProfileProps } from "./components/Profile/types";
 
 function App() {
+  const profile: ProfileProps = {
+    firstname: "maxime",
+    lastname: "baconnais",
+    birthdate: "23/07/1996",
+    address: "7 ruelle Lilly Reich Nantes",
+    contact_mail: "maxime.baconnais@teester.com",
+    login_mail: "maxime.baconnais@teester.com",
+    phone: "0658729674",
+  };
+  const infos: InfosProps[] = [
+    {
+      label: "Date of birth",
+      icon: "",
+      value: profile.birthdate,
+    },
+    {
+      label: "Address",
+      icon: "",
+      value: profile.address,
+    },
+    {
+      label: "Contact email",
+      icon: "",
+      value: profile.contact_mail,
+    },
+    {
+      label: "Login email",
+      icon: "",
+      value: profile.login_mail,
+    },
+    {
+      label: "Phone number",
+      icon: "",
+      value: profile.phone,
+    },
+  ];
+  const items: ItemProps[] = [
+    {
+      title: "General information",
+      inputs: [
+        { label: "Firstname", type: "text" },
+        { label: "Lastname", type: "text" },
+        { label: "Birthdate", type: "date" },
+      ],
+    },
+    {
+      title: "Contact information",
+      inputs: [
+        { label: "Contact email", type: "text" },
+        { label: "Phone", type: "text" },
+        { label: "Adress", type: "text" },
+        { label: "City", type: "text" },
+        { label: "Country", type: "text" },
+      ],
+    },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar
+        logo=""
+        name={`${profile.firstname} ${profile.lastname}`}
+        mail={profile.login_mail}
+      />
+      <body>
+        <Profile profile={profile} infos={infos} />
+        <Informations title="General information" items={items} />
+      </body>
     </div>
   );
 }
