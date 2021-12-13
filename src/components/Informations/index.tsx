@@ -5,7 +5,7 @@ import { PersonalInfosProps } from "./types";
 
 const PersonalInfos = ({ title, items }: PersonalInfosProps) => {
   return (
-    <section style={style.section}>
+    <section style={style.section as React.CSSProperties}>
       <Title label={title} />
       {items.map((item) => (
         <Item title={item.title} inputs={item.inputs} />
@@ -18,6 +18,7 @@ const PersonalInfos = ({ title, items }: PersonalInfosProps) => {
 const style = {
   section: {
     display: "flex",
+    flexDirection: "column",
     padding: 10,
     backgroundColor: "red",
   },

@@ -10,7 +10,7 @@ type Props = {
 
 const Profile = ({ profile, infos }: Props) => {
   return (
-    <aside style={style.profile}>
+    <aside style={style.profile as React.CSSProperties}>
       <ProfilePicture label={profile.firstname} />
       <Title label={`${profile.firstname} ${profile.lastname}`} />
       {infos.map((info) => (
@@ -23,6 +23,7 @@ const Profile = ({ profile, infos }: Props) => {
 const style = {
   profile: {
     display: "flex",
+    flexDirection: "column",
     padding: 10,
     backgroundColor: "green",
   },

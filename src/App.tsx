@@ -71,12 +71,18 @@ function App() {
         name={`${profile.firstname} ${profile.lastname}`}
         mail={profile.login_mail}
       />
-      <body>
+      <body style={style.body}>
         <Profile profile={profile} infos={infos} />
-        <Informations title="General information" items={items} />
+        <Informations title="Edit personal information" items={items} />
       </body>
     </div>
   );
 }
+
+const style = {
+  body: {
+    display: "flex",
+  },
+};
 
 export default App;
