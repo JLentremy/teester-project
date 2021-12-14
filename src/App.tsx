@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import React from "react";
 import "./App.css";
 import Informations from "./components/Informations";
@@ -65,24 +66,35 @@ function App() {
   ];
 
   return (
-    <div className="App">
+    <AppContainer>
       <Navbar
         logo=""
         name={`${profile.firstname} ${profile.lastname}`}
         mail={profile.login_mail}
       />
-      <body style={style.body}>
-        <Profile profile={profile} infos={infos} />
-        <Informations title="Edit personal information" items={items} />
-      </body>
-    </div>
+      <Body>
+        <BodyContent>
+          <Profile profile={profile} infos={infos} />
+          <Informations title="Edit personal information" items={items} />
+        </BodyContent>
+      </Body>
+    </AppContainer>
   );
 }
 
-const style = {
-  body: {
-    display: "flex",
-  },
-};
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const Body = styled(AppContainer)`
+  flex: 1 1 0%;
+  padding: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f6;
+`;
+const BodyContent = styled.div`
+  display: flex;
+`;
 
 export default App;
