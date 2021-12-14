@@ -92,15 +92,14 @@ const AppContainer = styled.div`
 const Body = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   flex: 1 1 0%;
   padding: 1.5rem 2rem;
-  max-width: 80rem;
-  margin-left: auto;
-  margin-right: auto;
 `;
 const BodyContent = styled.div`
   display: flex;
   align-items: flex-start;
+  max-width: 80rem;
 `;
 
 export default App;

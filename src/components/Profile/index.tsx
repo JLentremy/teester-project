@@ -34,6 +34,8 @@ export const AsideTop = styled.div`
 
   align-items: center;
   justify-content: center;
+
+  width: 20rem;
 `;
 export const Aside = styled.aside`
   display: flex;

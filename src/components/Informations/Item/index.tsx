@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import React from "react";
 import Input, { InputProps } from "../../Input";
 import Title from "../../Title";
@@ -7,7 +8,7 @@ const Item = ({ title, inputs }: ItemProps) => {
   return (
     <article style={style.item as React.CSSProperties}>
       <Title label={title} />
-      <div style={style.div as React.CSSProperties}>
+      <Inputs>
         {inputs.map((input: InputProps, key) => (
           <Input
             key={key}
@@ -16,7 +17,7 @@ const Item = ({ title, inputs }: ItemProps) => {
             value={input.value}
           />
         ))}
-      </div>
+      </Inputs>
     </article>
   );
 };
@@ -28,10 +29,14 @@ const style = {
     marginBottom: 10,
     // backgroundColor: "red",
   },
-  div: {
-    display: "flex",
-    flex: 1,
-  },
 };
+
+const Inputs = styled.div`
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 -0.65rem 1rem;
+`;
 
 export default Item;

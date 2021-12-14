@@ -14,8 +14,8 @@ const InputComp = ({ label, value, type }: InputProps) => {
       style={{
         display: "flex",
         flexDirection: "column",
-        width: "50%",
-        margin: "0 0.4rem",
+        width: "48%",
+        margin: "0.4rem",
       }}
     >
       <Title label={label} />
