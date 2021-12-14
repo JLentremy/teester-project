@@ -9,7 +9,7 @@ const Title = ({ label }: TitleProps) => {
 const style = {
   title: {
     display: "flex",
-    padding: 10,
+    margin: 10,
     backgroundColor: "red",
   },
 };

@@ -11,7 +11,7 @@ const Item = ({ label }: ItemProps) => {
 const style = {
   item: {
     display: "flex",
-    padding: 10,
+    margin: 10,
     backgroundColor: "red",
     textTransform: "uppercase",
   },

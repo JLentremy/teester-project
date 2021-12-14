@@ -15,7 +15,7 @@ const Button = ({ label, disabled, onClick }: ButtonProps) => {
 const style = {
   button: {
     display: "flex",
-    padding: 10,
+    margin: 10,
     backgroundColor: "red",
   },
 };

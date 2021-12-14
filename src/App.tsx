@@ -85,16 +85,20 @@ function App() {
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f4f6;
 `;
-const Body = styled(AppContainer)`
+const Body = styled.div`
+  display: flex;
+  flex-direction: column;
   flex: 1 1 0%;
   padding: 2.5rem;
   align-items: center;
   justify-content: center;
-  background-color: #f4f4f6;
 `;
 const BodyContent = styled.div`
   display: flex;
+  align-items: flex-start;
 `;
 
 export default App;

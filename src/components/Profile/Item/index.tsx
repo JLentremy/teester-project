@@ -17,7 +17,7 @@ const style = {
   item: {
     display: "flex",
     flexDirection: "column",
-    padding: 10,
+    margin: 10,
     backgroundColor: "red",
   },
 };

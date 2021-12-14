@@ -7,9 +7,11 @@ const Item = ({ title, inputs }: ItemProps) => {
   return (
     <article style={style.item as React.CSSProperties}>
       <Title label={title} />
-      {inputs.map((input: InputProps) => (
-        <Input label={input.label} type={input.type} />
-      ))}
+      <div style={style.div as React.CSSProperties}>
+        {inputs.map((input: InputProps, key) => (
+          <Input key={key} label={input.label} type={input.type} />
+        ))}
+      </div>
     </article>
   );
 };
@@ -18,8 +20,11 @@ const style = {
   item: {
     display: "flex",
     flexDirection: "column",
-    padding: 10,
+    margin: 10,
     backgroundColor: "red",
+  },
+  div: {
+    display: "flex",
   },
 };
 
