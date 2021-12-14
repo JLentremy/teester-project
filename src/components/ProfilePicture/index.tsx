@@ -1,9 +1,11 @@
+import React from "react";
+
 type ItemProps = {
   label: string;
 };
 
 const Item = ({ label }: ItemProps) => {
-  return <div style={style.item}>{label}</div>;
+  return <div style={style.item as React.CSSProperties}>{label[0]}</div>;
 };
 
 const style = {
@@ -11,6 +13,7 @@ const style = {
     display: "flex",
     padding: 10,
     backgroundColor: "red",
+    textTransform: "uppercase",
   },
 };
 

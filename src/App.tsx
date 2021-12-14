@@ -19,27 +19,27 @@ function App() {
   const infos: InfosProps[] = [
     {
       label: "Date of birth",
-      icon: "",
+      icon: "check",
       value: profile.birthdate,
     },
     {
       label: "Address",
-      icon: "",
+      icon: "check",
       value: profile.address,
     },
     {
       label: "Contact email",
-      icon: "",
+      icon: "check",
       value: profile.contact_mail,
     },
     {
       label: "Login email",
-      icon: "",
+      icon: "check",
       value: profile.login_mail,
     },
     {
       label: "Phone number",
-      icon: "",
+      icon: "check",
       value: profile.phone,
     },
   ];

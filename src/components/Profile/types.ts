@@ -1,3 +1,5 @@
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+
 export type ProfileProps = {
   firstname: string;
   lastname: string;
@@ -10,6 +12,6 @@ export type ProfileProps = {
 
 export type InfosProps = {
   label: string;
-  icon: any;
+  icon: IconProp;
   value: string;
 };
