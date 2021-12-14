@@ -26,7 +26,7 @@ const style = {
     display: "flex",
     flexDirection: "column",
     margin: 10,
-    backgroundColor: "red",
+    // backgroundColor: "red",
   },
   div: {
     display: "flex",

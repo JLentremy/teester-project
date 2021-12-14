@@ -60,7 +60,7 @@ function App() {
       inputs: [
         { label: "Contact email", type: "text", value: profile.contact_mail },
         { label: "Phone", type: "text", value: profile.phone },
-        { label: "Adress", type: "text", value: profile.address },
+        { label: "Address", type: "text", value: profile.address },
         { label: "City", type: "text", value: profile.city },
         { label: "Country", type: "text", value: profile.country },
       ],

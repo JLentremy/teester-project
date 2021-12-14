@@ -30,6 +30,7 @@ export const Aside = styled.aside`
   display: flex;
   flex-direction: column;
   margin: 0.65rem;
+  padding: 1rem;
   border-radius: 0.5rem;
   background-color: rgba(255, 255, 255, 1);
 

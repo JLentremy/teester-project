@@ -29,9 +29,8 @@ const Navbar = ({ name, mail }: NavbarProps) => {
 
 const Nav = styled.nav`
   display: flex;
-  padding: 10;
-  color: #fff;
-  background-color: #7272ff;
+  color: var(--accent-text-color);
+  background-color: var(--accent-color);
 `;
 const NavContent = styled.div`
   display: flex;
@@ -47,6 +46,7 @@ const NavContent = styled.div`
 `;
 const NavProfile = styled.div`
   display: flex;
+  align-items: center;
 `;
 const ImageContainer = styled.div`
   flex-shrink: 0;
