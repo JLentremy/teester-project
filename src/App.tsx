@@ -70,7 +70,6 @@ function App() {
   return (
     <AppContainer>
       <Navbar
-        logo=""
         name={`${profile.firstname} ${profile.lastname}`}
         mail={profile.login_mail}
       />

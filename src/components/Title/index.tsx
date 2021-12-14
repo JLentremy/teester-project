@@ -10,6 +10,7 @@ const style = {
   title: {
     display: "flex",
     margin: 10,
+    // color: "#7272FF",
     backgroundColor: "red",
   },
 };
