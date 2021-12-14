@@ -4,9 +4,9 @@ import Input, { InputProps } from "../../Input";
 import Title from "../../Title";
 import { ItemProps } from "../types";
 
-const Item = ({ title, inputs }: ItemProps) => {
+const InfosItemComp = ({ title, inputs }: ItemProps) => {
   return (
-    <article style={style.item as React.CSSProperties}>
+    <InfosItem>
       <Title label={title} />
       <Inputs>
         {inputs.map((input: InputProps, key) => (
@@ -18,25 +18,26 @@ const Item = ({ title, inputs }: ItemProps) => {
           />
         ))}
       </Inputs>
-    </article>
+    </InfosItem>
   );
 };
 
-const style = {
-  item: {
-    display: "flex",
-    flexDirection: "column",
-    marginBottom: 10,
-    // backgroundColor: "red",
-  },
-};
-
-const Inputs = styled.div`
+const Flex = styled.div`
   display: flex;
+`;
+const FlexCol = styled(Flex)`
+  flex-direction: column;
+`;
+const InfosItem = styled(FlexCol)`
+  margin-bottom: var(--md-size);
+`;
+const Inputs = styled(Flex)`
   flex: 1;
   flex-wrap: wrap;
-  width: 100%;
-  margin: 0 -0.65rem 1rem;
+  width: calc(100% + var(--sm-size) * 2);
+  margin-right: calc(var(--sm-size) * -1);
+  margin-left: calc(var(--sm-size) * -1);
+  margin-bottom: var(--md-size);
 `;
 
-export default Item;
+export default InfosItemComp;

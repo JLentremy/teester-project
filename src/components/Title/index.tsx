@@ -4,21 +4,21 @@ type TitleProps = {
   label: string;
 };
 
-const Title = ({ label }: TitleProps) => {
-  return <Content>{label}</Content>;
+const TitleComp = ({ label }: TitleProps) => {
+  return <StyledTitle>{label}</StyledTitle>;
 };
 
-const Content = styled.h1`
+const StyledTitle = styled.h1`
   display: flex;
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: var(--md-font);
   line-height: 1.25rem;
   text-transform: capitalize;
 
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--sm-size);
   margin-top: 0;
 
-  color: #7272ff;
+  color: var(--accent-color);
 `;
 
-export default Title;
+export default TitleComp;

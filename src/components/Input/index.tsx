@@ -10,27 +10,29 @@ export type InputProps = {
 
 const InputComp = ({ label, value, type }: InputProps) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "48%",
-        margin: "0.4rem",
-      }}
-    >
+    <Input>
       <Title label={label} />
-      <Input type={type} defaultValue={value}></Input>
-    </div>
+      <StyledInput type={type} defaultValue={value}></StyledInput>
+    </Input>
   );
 };
 
-const Input = styled.input`
-  display: block;
+const Flex = styled.div`
+  display: flex;
+`;
+const FlexCol = styled(Flex)`
+  flex-direction: column;
+`;
+const Input = styled(FlexCol)`
+  width: calc(50% - var(--sm-size) * 2);
+  margin: var(--xs-size) var(--sm-size);
+`;
+const StyledInput = styled.input`
   appearance: none;
   border: 0;
-  padding: 0.5rem;
-  background-color: #f5f5f5;
-  border-radius: 0.375rem;
+  padding: var(--sm-size);
+  background-color: var(--gray-bg-color);
+  border-radius: var(--roundness);
 `;
 
 export default InputComp;

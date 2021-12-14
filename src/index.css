@@ -12,6 +12,25 @@ body {
 
   --accent-color: #7272ff;
   --accent-text-color: #fff;
+  --gray-color: rgba(107, 114, 128, 1);
+
+  --bg-color: #f4f4f6;
+  --gray-bg-color: #f4f4f6;
+  --dark-gray-bg-color: #dfdfdf;
+  --picture-bg-color: #5d6ac0;
+
+  --xs-size: 0.325rem;
+  --sm-size: 0.65rem;
+  --md-size: 1rem;
+  --xl-size: 2rem;
+  --2xl-size: 4rem;
+
+  --sm-font: 0.75rem;
+  --md-font: 0.875rem;
+  --xl-font: var(--xl-size);
+
+  --roundness: 0.4rem;
+  --full-roundness: 9999px;
 }
 
 code {

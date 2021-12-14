@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import ProfilePicture from "../ProfilePicture";
 import Title from "../Title";
-import Item from "./Item";
+import ProfileItem from "./ProfileItem";
 import { InfosProps, ProfileProps } from "./types";
 
 type Props = {
@@ -9,44 +9,45 @@ type Props = {
   infos: InfosProps[];
 };
 
-const Profile = ({ profile, infos }: Props) => {
+const ProfileComp = ({ profile, infos }: Props) => {
   return (
-    <Aside>
-      <AsideTop>
-        <ProfilePicture label={profile.firstname} />
+    <Profile>
+      <Media>
+        <ProfilePicture letter={profile.firstname[0]} />
         <Title label={`${profile.firstname} ${profile.lastname}`} />
-      </AsideTop>
+      </Media>
       {infos.map((info, key) => (
-        <Item
+        <ProfileItem
           key={key}
           icon={info.icon}
           label={info.label}
           value={info.value}
         />
       ))}
-    </Aside>
+    </Profile>
   );
 };
 
-export const AsideTop = styled.div`
+const Flex = styled.div`
   display: flex;
+`;
+const FlexCol = styled(Flex)`
   flex-direction: column;
-
+`;
+const Media = styled(FlexCol)`
   align-items: center;
   justify-content: center;
 
   width: 20rem;
 `;
-export const Aside = styled.aside`
-  display: flex;
-  flex-direction: column;
-  margin: 0.65rem;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  background-color: rgba(255, 255, 255, 1);
+export const Profile = styled(FlexCol)`
+  margin: var(--sm-size);
+  padding: var(--md-size);
+  border-radius: var(--roundness);
+  background-color: white;
 
   box-shadow: var(--ring-offset-shadow, 0 0 #0000),
     var(--ring-shadow, 0 0 #0000), var(--shadow);
 `;
 
-export default Profile;
+export default ProfileComp;

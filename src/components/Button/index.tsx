@@ -6,38 +6,34 @@ export type ButtonProps = {
   onClick: () => void;
 };
 
-const Button = ({ label, disabled, onClick }: ButtonProps) => {
+const ButtonComp = ({ label, disabled, onClick }: ButtonProps) => {
   return (
-    <div style={{ display: "flex", flexDirection: "row-reverse" }}>
-      <ButtonContent onClick={onClick} disabled={disabled}>
-        {label}
-      </ButtonContent>
-    </div>
+    <Button onClick={onClick} disabled={disabled}>
+      {label}
+    </Button>
   );
 };
 
-const ButtonContent = styled.button`
-  display: inline-flex;
-  background-color: #dfdfdf;
+const Button = styled.button`
+  display: flex;
+  align-self: flex-end;
+  background-color: var(--dark-gray-bg-color);
   border-style: none;
 
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: var(--sm-size) var(--md-size);
 
-  border-radius: 0.375rem;
+  border-radius: var(--roundness);
 
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: var(--sm-font);
   color: var(--accent-text-color);
 
-  min-width: 6rem;
+  min-width: 6.5rem;
   justify-content: center;
 
-  .hover: {
+  &(:hover): {
     background-color: rgba(67, 56, 202, 1);
   }
 `;
 
-export default Button;
+export default ButtonComp;

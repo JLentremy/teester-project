@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import Button from "../Button";
-import { Aside } from "../Profile";
+import { Profile } from "../Profile";
 import Title from "../Title";
-import Item from "./Item";
+import InfosItem from "./InfosItem";
 import { PersonalInfosProps } from "./types";
 
 const PersonalInfos = ({ title, items }: PersonalInfosProps) => {
@@ -10,13 +10,13 @@ const PersonalInfos = ({ title, items }: PersonalInfosProps) => {
     <Section>
       <Title label={title} />
       {items.map((item, key) => (
-        <Item key={key} title={item.title} inputs={item.inputs} />
+        <InfosItem key={key} title={item.title} inputs={item.inputs} />
       ))}
       <Button label="Save" onClick={() => true} disabled={true} />
     </Section>
   );
 };
 
-const Section = styled(Aside)``;
+const Section = styled(Profile)``;
 
 export default PersonalInfos;

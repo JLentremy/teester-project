@@ -9,15 +9,15 @@ import { InfosProps, ProfileProps } from "./components/Profile/types";
 
 function App() {
   const profile: ProfileProps = {
-    firstname: "maxime",
-    lastname: "baconnais",
+    firstname: "Maxime",
+    lastname: "Baconnais",
     birthdate: "23/07/1996",
     address: "7 ruelle Lilly Reich",
     city: "Nantes",
     country: "",
     contact_mail: "maxime.baconnais@teester.com",
     login_mail: "maxime.baconnais@teester.com",
-    phone: "0658729674",
+    phone: "+33658729674",
   };
   const infos: InfosProps[] = [
     {
@@ -68,38 +68,41 @@ function App() {
   ];
 
   return (
-    <AppContainer>
+    <AppComp>
       <Navbar
         name={`${profile.firstname} ${profile.lastname}`}
         mail={profile.login_mail}
       />
       <Body>
-        <BodyContent>
+        <div>
           <Profile profile={profile} infos={infos} />
           <Informations title="Edit personal information" items={items} />
-        </BodyContent>
+        </div>
       </Body>
-    </AppContainer>
+    </AppComp>
   );
 }
 
-const AppContainer = styled.div`
+const Flex = styled.div`
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: #f4f4f6;
 `;
-const Body = styled.div`
-  display: flex;
+const FlexCol = styled(Flex)`
   flex-direction: column;
+`;
+const AppComp = styled(FlexCol)`
+  min-height: 100vh;
+  background-color: var(--bg-color);
+`;
+const Body = styled(FlexCol)`
   align-items: center;
   flex: 1 1 0%;
-  padding: 1.5rem 2rem;
-`;
-const BodyContent = styled.div`
-  display: flex;
-  align-items: flex-start;
-  max-width: 80rem;
+  padding: var(--xl-size);
+
+  > div {
+    display: flex;
+    align-items: flex-start;
+    max-width: 80rem;
+  }
 `;
 
 export default App;

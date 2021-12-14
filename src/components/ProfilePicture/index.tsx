@@ -1,43 +1,38 @@
 import styled from "@emotion/styled";
-import React from "react";
 
 type ItemProps = {
-  label: string;
+  letter: string;
 };
 
-const Item = ({ label }: ItemProps) => {
+const ProfilePictureComp = ({ letter }: ItemProps) => {
   return (
-    <Content>
-      <Letter>{label[0]}</Letter>
-    </Content>
+    <ProfilePicture>
+      <div>{letter}</div>
+    </ProfilePicture>
   );
 };
 
-const Content = styled.div`
+const ProfilePicture = styled.div`
   display: flex;
-  width: 2rem;
-  height: 2rem;
-  max-width: 100%;
-  margin: 0 1rem;
-  padding-bottom: 0.5 rem;
+  width: var(--xl-size);
+  height: var(--xl-size);
+  margin: var(--md-size);
 
-  border-radius: 9999px;
-  align-items: center;
-  justify-content: center;
-
-  background-color: #5d6ac0;
-`;
-const Letter = styled.div`
-  display: flex;
-  width: 1rem;
-  height: 1rem;
-  margin-bottom: 1px;
-
-  align-items: center;
-  justify-content: center;
+  border-radius: var(--full-roundness);
   text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
-  color: #fff;
+  color: var(--accent-text-color);
+  background-color: var(--picture-bg-color);
+
+  > div {
+    width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+    margin-bottom: 1px;
+  }
 `;
 
-export default Item;
+export default ProfilePictureComp;
