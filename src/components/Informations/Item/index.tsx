@@ -9,7 +9,12 @@ const Item = ({ title, inputs }: ItemProps) => {
       <Title label={title} />
       <div style={style.div as React.CSSProperties}>
         {inputs.map((input: InputProps, key) => (
-          <Input key={key} label={input.label} type={input.type} />
+          <Input
+            key={key}
+            label={input.label}
+            type={input.type}
+            value={input.value}
+          />
         ))}
       </div>
     </article>

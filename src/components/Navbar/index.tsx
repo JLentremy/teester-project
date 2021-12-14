@@ -21,7 +21,8 @@ const style = {
   navbar: {
     display: "flex",
     padding: 10,
-    backgroundColor: "red",
+    color: "#fff",
+    backgroundColor: "#7272FF",
   },
 };
 

@@ -5,6 +5,8 @@ export type ProfileProps = {
   lastname: string;
   birthdate: string;
   address: string;
+  city: string;
+  country: string;
   contact_mail: string;
   login_mail: string;
   phone: string;

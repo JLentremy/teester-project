@@ -12,7 +12,9 @@ function App() {
     firstname: "maxime",
     lastname: "baconnais",
     birthdate: "23/07/1996",
-    address: "7 ruelle Lilly Reich Nantes",
+    address: "7 ruelle Lilly Reich",
+    city: "Nantes",
+    country: "",
     contact_mail: "maxime.baconnais@teester.com",
     login_mail: "maxime.baconnais@teester.com",
     phone: "0658729674",
@@ -26,7 +28,7 @@ function App() {
     {
       label: "Address",
       icon: "check",
-      value: profile.address,
+      value: `${profile.address} ${profile.city} ${profile.country}`,
     },
     {
       label: "Contact email",
@@ -48,19 +50,19 @@ function App() {
     {
       title: "General information",
       inputs: [
-        { label: "Firstname", type: "text" },
-        { label: "Lastname", type: "text" },
-        { label: "Birthdate", type: "date" },
+        { label: "Firstname", type: "text", value: profile.firstname },
+        { label: "Lastname", type: "text", value: profile.lastname },
+        { label: "Birthdate", type: "date", value: profile.birthdate },
       ],
     },
     {
       title: "Contact information",
       inputs: [
-        { label: "Contact email", type: "text" },
-        { label: "Phone", type: "text" },
-        { label: "Adress", type: "text" },
-        { label: "City", type: "text" },
-        { label: "Country", type: "text" },
+        { label: "Contact email", type: "text", value: profile.contact_mail },
+        { label: "Phone", type: "text", value: profile.phone },
+        { label: "Adress", type: "text", value: profile.address },
+        { label: "City", type: "text", value: profile.city },
+        { label: "Country", type: "text", value: profile.country },
       ],
     },
   ];
@@ -92,9 +94,8 @@ const Body = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1 1 0%;
-  padding: 2.5rem;
+  padding: 1.5rem 2.5rem;
   align-items: center;
-  justify-content: center;
 `;
 const BodyContent = styled.div`
   display: flex;

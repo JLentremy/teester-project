@@ -1,15 +1,17 @@
+import React from "react";
 import Title from "../Title";
 
 export type InputProps = {
   label: string;
-  type: any;
+  value: string;
+  type: React.HTMLInputTypeAttribute;
 };
 
-const Input = ({ label, type }: InputProps) => {
+const Input = ({ label, value, type }: InputProps) => {
   return (
     <div>
       <Title label={label} />
-      <input style={style.input} type={type}></input>
+      <input style={style.input} type={type} defaultValue={value}></input>
     </div>
   );
 };
@@ -18,7 +20,6 @@ const style = {
   input: {
     display: "flex",
     padding: 10,
-    backgroundColor: "blue",
   },
 };
 

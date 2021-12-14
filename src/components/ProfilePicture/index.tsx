@@ -12,7 +12,8 @@ const style = {
   item: {
     display: "flex",
     margin: 10,
-    backgroundColor: "red",
+    color: "#fff",
+    backgroundColor: "#5D6AC0",
     textTransform: "uppercase",
   },
 };

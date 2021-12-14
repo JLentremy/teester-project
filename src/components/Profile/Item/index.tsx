@@ -5,7 +5,6 @@ import { InfosProps } from "../types";
 const Item = ({ icon, label, value }: InfosProps) => {
   return (
     <div style={style.item as React.CSSProperties}>
-      <div>{icon}</div>
       <Icon icon={icon} aria-hidden="true" />
       <div>{label}</div>
       <div>{value}</div>
