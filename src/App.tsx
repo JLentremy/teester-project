@@ -93,8 +93,10 @@ const Body = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1 1 0%;
-  padding: 1.5rem 2.5rem;
-  align-items: center;
+  padding: 1.5rem 2rem;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
 `;
 const BodyContent = styled.div`
   display: flex;

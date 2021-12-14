@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import React from "react";
 import Title from "../Title";
 
@@ -7,20 +8,29 @@ export type InputProps = {
   type: React.HTMLInputTypeAttribute;
 };
 
-const Input = ({ label, value, type }: InputProps) => {
+const InputComp = ({ label, value, type }: InputProps) => {
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        width: "50%",
+        margin: "0 0.4rem",
+      }}
+    >
       <Title label={label} />
-      <input style={style.input} type={type} defaultValue={value}></input>
+      <Input type={type} defaultValue={value}></Input>
     </div>
   );
 };
 
-const style = {
-  input: {
-    display: "flex",
-    padding: 10,
-  },
-};
+const Input = styled.input`
+  display: block;
+  appearance: none;
+  border: 0;
+  padding: 0.5rem;
+  background-color: #f5f5f5;
+  border-radius: 0.375rem;
+`;
 
-export default Input;
+export default InputComp;

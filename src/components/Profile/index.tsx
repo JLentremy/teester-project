@@ -12,8 +12,10 @@ type Props = {
 const Profile = ({ profile, infos }: Props) => {
   return (
     <Aside>
-      <ProfilePicture label={profile.firstname} />
-      <Title label={`${profile.firstname} ${profile.lastname}`} />
+      <AsideTop>
+        <ProfilePicture label={profile.firstname} />
+        <Title label={`${profile.firstname} ${profile.lastname}`} />
+      </AsideTop>
       {infos.map((info, key) => (
         <Item
           key={key}
@@ -26,6 +28,13 @@ const Profile = ({ profile, infos }: Props) => {
   );
 };
 
+export const AsideTop = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+`;
 export const Aside = styled.aside`
   display: flex;
   flex-direction: column;

@@ -25,11 +25,12 @@ const style = {
   item: {
     display: "flex",
     flexDirection: "column",
-    margin: 10,
+    marginBottom: 10,
     // backgroundColor: "red",
   },
   div: {
     display: "flex",
+    flex: 1,
   },
 };
 
