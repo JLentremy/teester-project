@@ -8,9 +8,10 @@ const ProfileItemComp = ({ icon, label, value }: InfosProps) => {
     <ProfileItem>
       <Text label={label} iconLeft={icon} type={TextType.small} />
       {value.map(
-        (line) =>
+        (line, key) =>
           line && (
             <Text
+              key={key}
               label={line}
               type={TextType.small}
               color="var(--gray-color)"
