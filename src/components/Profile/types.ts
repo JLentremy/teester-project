@@ -1,9 +1,10 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { DateTime } from "luxon";
 
 export type ProfileProps = {
   firstname: string;
   lastname: string;
-  birthdate: string;
+  birthdate: DateTime;
   address: string;
   city: string;
   country: string;

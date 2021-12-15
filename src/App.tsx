@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { DateTime } from "luxon";
 import React from "react";
 import "./App.css";
 import Informations from "./components/Informations";
@@ -12,7 +13,7 @@ function App() {
   const profile: ProfileProps = {
     firstname: "Maxime",
     lastname: "Baconnais",
-    birthdate: "23/07/1996",
+    birthdate: DateTime.local(1996, 7, 23),
     address: "7 ruelle Lilly Reich",
     city: "Nantes",
     country: "",
@@ -24,7 +25,7 @@ function App() {
     {
       label: "Date of birth",
       icon: "birthday-cake",
-      value: [profile.birthdate],
+      value: [profile.birthdate.toLocaleString(DateTime.DATE_MED)],
     },
     {
       label: "Address",
@@ -53,7 +54,11 @@ function App() {
       inputs: [
         { label: "Firstname", type: InputsType.text, value: profile.firstname },
         { label: "Lastname", type: InputsType.text, value: profile.lastname },
-        { label: "Birthdate", type: InputsType.date, value: profile.birthdate },
+        {
+          label: "Birthdate",
+          type: InputsType.date,
+          value: profile.birthdate.toFormat("yyyy-MM-dd"),
+        },
       ],
     },
     {

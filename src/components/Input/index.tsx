@@ -53,6 +53,8 @@ const StyledInput = styled.input`
   padding: var(--sm-size);
   border-radius: var(--roundness);
   background-color: var(--gray-bg-color);
+  padding-right: ${(props) =>
+    props.type === InputsType.date ? 2.5 : "var(--sm-size)"}rem;
 `;
 const StyledIcon = styled(Icon)`
   margin: 0 var(--md-size);
