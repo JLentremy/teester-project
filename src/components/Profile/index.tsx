@@ -30,7 +30,7 @@ const Media = styled(FlexCol)`
 
   width: 18rem;
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     /* width: 100%; */
   }
 `;
@@ -43,7 +43,7 @@ export const Profile = styled(FlexCol)`
   box-shadow: var(--ring-offset-shadow, 0 0 #0000),
     var(--ring-shadow, 0 0 #0000), var(--shadow);
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     /* width: 100%; */
   }
 `;

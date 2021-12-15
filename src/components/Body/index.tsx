@@ -21,7 +21,7 @@ const Body = styled.div`
     align-items: flex-start;
     max-width: 80rem;
 
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
       flex-direction: column;
     }
   }
