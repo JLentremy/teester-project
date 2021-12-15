@@ -10,7 +10,7 @@ const ProfileItemComp = ({ icon, label, value }: InfosProps) => {
         <StyledIcon icon={icon} aria-hidden="true" />
         {label}
       </Label>
-      <Value>{value}</Value>
+      {value.map((line) => line && <Value>{line}</Value>)}
     </ProfileItem>
   );
 };
@@ -36,6 +36,7 @@ const StyledIcon = styled(Icon)`
 const Value = styled(Flex)`
   font-size: var(--sm-font);
   color: var(--gray-color);
+  margin-bottom: calc(var(--xs-size) / 2);
 `;
 
 export default ProfileItemComp;

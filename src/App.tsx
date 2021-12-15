@@ -24,27 +24,27 @@ function App() {
     {
       label: "Date of birth",
       icon: "birthday-cake",
-      value: profile.birthdate,
+      value: [profile.birthdate],
     },
     {
       label: "Address",
       icon: "map-marker-alt",
-      value: `${profile.address} ${profile.city} ${profile.country}`,
+      value: [profile.address, profile.city, profile.country],
     },
     {
       label: "Contact email",
       icon: "envelope",
-      value: profile.contact_mail,
+      value: [profile.contact_mail],
     },
     {
       label: "Login email",
       icon: "envelope",
-      value: profile.login_mail,
+      value: [profile.login_mail],
     },
     {
       label: "Phone number",
       icon: "phone-alt",
-      value: profile.phone,
+      value: [profile.phone],
     },
   ];
   const items: ItemProps[] = [

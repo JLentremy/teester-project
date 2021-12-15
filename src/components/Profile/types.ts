@@ -15,5 +15,5 @@ export type ProfileProps = {
 export type InfosProps = {
   label: string;
   icon: IconProp;
-  value: string;
+  value: string[];
 };
