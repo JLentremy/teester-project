@@ -1,28 +1,39 @@
-import ProfilePicture from "../ProfilePicture";
+import styled from "@emotion/styled";
+import React from "react";
+import { withProperties } from "../../app/utils";
+import Logo from "./NavbarLogo";
+import Profile from "./NavbarProfile";
 
 export type NavbarProps = {
-  logo: string;
   name: string;
   mail: string;
 };
 
-const Navbar = ({ logo, name, mail }: NavbarProps) => {
+const NavbarComp = ({ children }: React.PropsWithChildren<{}>) => {
   return (
-    <header style={style.navbar}>
-      <div>{logo}</div>
-      <ProfilePicture label={name} />
-      <div>{name}</div>
-      <div>{mail}</div>
-    </header>
+    <Navbar>
+      <div>{children}</div>
+    </Navbar>
   );
 };
 
-const style = {
-  navbar: {
-    display: "flex",
-    padding: 10,
-    backgroundColor: "red",
-  },
-};
+const Navbar = styled.nav`
+  display: flex;
+  color: var(--accent-text-color);
+  background-color: var(--accent-color);
 
-export default Navbar;
+  > div {
+    display: flex;
+    flex: 1 1 0%;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--xl-size);
+    padding-right: var(--xl-size);
+    height: var(--2xl-size);
+    align-items: center;
+    justify-content: space-between;
+  }
+`;
+
+export default withProperties(NavbarComp, { Profile, Logo });

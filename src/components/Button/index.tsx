@@ -1,23 +1,40 @@
+import styled from "@emotion/styled";
+
 export type ButtonProps = {
   label: string;
   disabled?: boolean;
   onClick: () => void;
 };
 
-const Button = ({ label, disabled, onClick }: ButtonProps) => {
+const ButtonComp = ({ label, disabled, onClick }: ButtonProps) => {
   return (
-    <button style={style.button} onClick={onClick} disabled={disabled}>
+    <Button onClick={onClick} disabled={disabled}>
       {label}
-    </button>
+    </Button>
   );
 };
 
-const style = {
-  button: {
-    display: "flex",
-    padding: 10,
-    backgroundColor: "red",
-  },
-};
+const Button = styled.button`
+  display: flex;
+  align-self: flex-end;
+  background-color: var(--dark-gray-bg-color);
+  border-style: none;
 
-export default Button;
+  padding: var(--sm-size) var(--md-size);
+
+  border-radius: var(--roundness);
+
+  font-weight: 600;
+  font-size: var(--sm-font);
+  color: var(--accent-text-color);
+
+  min-width: 6.5rem;
+  justify-content: center;
+
+  &:hover {
+    background-color: rgba(67, 56, 202, 1);
+    cursor: pointer;
+  }
+`;
+
+export default ButtonComp;

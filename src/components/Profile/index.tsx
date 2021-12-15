@@ -1,31 +1,43 @@
-import ProfilePicture from "../ProfilePicture";
-import Title from "../Title";
-import Item from "./Item";
-import { InfosProps, ProfileProps } from "./types";
+import styled from "@emotion/styled";
+import { withProperties } from "../../app/utils";
+import Avatar from "../Avatar";
+import Text, { TextType } from "../Text";
+import Item from "./ProfileItem";
 
 type Props = {
-  profile: ProfileProps;
-  infos: InfosProps[];
+  name: string;
 };
 
-const Profile = ({ profile, infos }: Props) => {
+const ProfileComp = ({ name, children }: React.PropsWithChildren<Props>) => {
   return (
-    <aside style={style.profile}>
-      <ProfilePicture label={profile.firstname} />
-      <Title label={`${profile.firstname} ${profile.lastname}`} />
-      {infos.map((info) => (
-        <Item icon={info.icon} label={info.label} value={info.value} />
-      ))}
-    </aside>
+    <Profile>
+      <Media>
+        <Avatar letter={name[0]} scale={2.5} />
+        <Text label={name} type={TextType.headtitle} />
+      </Media>
+      {children}
+    </Profile>
   );
 };
 
-const style = {
-  profile: {
-    display: "flex",
-    padding: 10,
-    backgroundColor: "green",
-  },
-};
+const FlexCol = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const Media = styled(FlexCol)`
+  align-items: center;
+  justify-content: center;
 
-export default Profile;
+  width: 18rem;
+`;
+export const Profile = styled(FlexCol)`
+  margin: var(--sm-size);
+  padding: var(--md-size);
+  border-radius: var(--roundness);
+  background-color: white;
+
+  box-shadow: var(--ring-offset-shadow, 0 0 #0000),
+    var(--ring-shadow, 0 0 #0000), var(--shadow);
+`;
+
+export default withProperties(ProfileComp, { Item });

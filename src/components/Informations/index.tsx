@@ -1,26 +1,38 @@
+import styled from "@emotion/styled";
+import { withProperties } from "../../app/utils";
 import Button from "../Button";
-import Title from "../Title";
-import Item from "./Item";
+import Icon from "../Icon";
+import { Profile } from "../Profile";
+import Text, { TextType } from "../Text";
+import Item from "./InfosItem";
 import { PersonalInfosProps } from "./types";
 
-const PersonalInfos = ({ title, items }: PersonalInfosProps) => {
+type Props = {
+  title: PersonalInfosProps["title"];
+};
+
+const PersonalInfos = ({ title, children }: React.PropsWithChildren<Props>) => {
   return (
-    <section style={style.section}>
-      <Title label={title} />
-      {items.map((item) => (
-        <Item title={item.title} inputs={item.inputs} />
-      ))}
+    <Section>
+      <Header>
+        <Text label={title} type={TextType.headtitle} accent />
+        <StyledIcon icon="chevron-up" />
+      </Header>
+      {children}
       <Button label="Save" onClick={() => true} disabled={true} />
-    </section>
+    </Section>
   );
 };
 
-const style = {
-  section: {
-    display: "flex",
-    padding: 10,
-    backgroundColor: "red",
-  },
-};
+const Section = styled(Profile)``;
+const Header = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+`;
+const StyledIcon = styled(Icon)`
+  margin: var(--xs-size) 0;
+  color: var(--accent-color);
+`;
 
-export default PersonalInfos;
+export default withProperties(PersonalInfos, { Item });
