@@ -31,8 +31,9 @@ const Button = styled.button`
   min-width: 6.5rem;
   justify-content: center;
 
-  &(:hover): {
+  &:hover {
     background-color: rgba(67, 56, 202, 1);
+    cursor: pointer;
   }
 `;
 
