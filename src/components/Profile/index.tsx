@@ -12,7 +12,7 @@ const ProfileComp = ({ name, children }: React.PropsWithChildren<Props>) => {
   return (
     <Profile>
       <Media>
-        <Avatar letter={name[0]} />
+        <Avatar letter={name[0]} scale={2.5} />
         <Text label={name} type={TextType.headtitle} />
       </Media>
       {children}

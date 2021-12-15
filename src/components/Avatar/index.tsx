@@ -2,20 +2,21 @@ import styled from "@emotion/styled";
 
 type ItemProps = {
   letter: string;
+  scale?: number;
 };
 
-const ProfilePictureComp = ({ letter }: ItemProps) => {
+const AvatarComp = ({ letter, scale = 1 }: ItemProps) => {
   return (
-    <ProfilePicture>
+    <Avatar scale={scale}>
       <div>{letter}</div>
-    </ProfilePicture>
+    </Avatar>
   );
 };
 
-const ProfilePicture = styled.div`
+const Avatar = styled.div<{ scale?: ItemProps["scale"] }>`
   display: flex;
-  width: var(--xl-size);
-  height: var(--xl-size);
+  width: calc(var(--xl-size) * ${(props) => props.scale});
+  height: calc(var(--xl-size) * ${(props) => props.scale});
   margin: var(--md-size);
 
   border-radius: var(--full-roundness);
@@ -28,11 +29,12 @@ const ProfilePicture = styled.div`
   background-color: var(--picture-bg-color);
 
   > div {
-    width: 1rem;
-    height: 1rem;
-    line-height: 1rem;
-    margin-bottom: 1px;
+    width: ${(props) => props.scale}rem;
+    height: ${(props) => props.scale}rem;
+    font-size: ${(props) => props.scale}rem;
+    line-height: ${(props) => props.scale}rem;
+    margin-bottom: ${(props) => props.scale}px;
   }
 `;
 
-export default ProfilePictureComp;
+export default AvatarComp;
