@@ -20,6 +20,10 @@ const Body = styled.div`
     display: flex;
     align-items: flex-start;
     max-width: 80rem;
+
+    @media (max-width: 700px) {
+      flex-direction: column;
+    }
   }
 `;
 

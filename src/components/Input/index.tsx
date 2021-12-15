@@ -40,6 +40,10 @@ const Input = styled(FlexCol)<{ type: InputProps["type"] }>`
       var(--sm-size) * 2
   );
   margin: var(--xs-size) var(--sm-size);
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `;
 const InputContainer = styled(Flex)`
   align-items: center;
