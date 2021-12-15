@@ -3,6 +3,7 @@ import {
   faBirthdayCake,
   faCalendar,
   faCheck,
+  faChevronUp,
   faEnvelope,
   faMapMarkerAlt,
   faPhoneAlt,
@@ -15,7 +16,8 @@ library.add(
   faMapMarkerAlt,
   faEnvelope,
   faPhoneAlt,
-  faCalendar
+  faCalendar,
+  faChevronUp
 );
 
 export default FontAwesomeIcon;
