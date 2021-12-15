@@ -41,7 +41,7 @@ const Input = styled(FlexCol)<{ type: InputProps["type"] }>`
   );
   margin: var(--xs-size) var(--sm-size);
 
-  @media (max-width: 700px) {
+  @media (max-width: 1000px) {
     width: 100%;
   }
 `;
