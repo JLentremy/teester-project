@@ -1,17 +1,20 @@
 import styled from "@emotion/styled";
+import { withProperties } from "../../app/utils";
 import Button from "../Button";
 import { Profile } from "../Profile";
 import Title from "../Title";
-import InfosItem from "./InfosItem";
+import Item from "./InfosItem";
 import { PersonalInfosProps } from "./types";
 
-const PersonalInfos = ({ title, items }: PersonalInfosProps) => {
+type Props = {
+  title: PersonalInfosProps["title"];
+};
+
+const PersonalInfos = ({ title, children }: React.PropsWithChildren<Props>) => {
   return (
     <Section>
       <Title label={title} />
-      {items.map((item, key) => (
-        <InfosItem key={key} title={item.title} inputs={item.inputs} />
-      ))}
+      {children}
       <Button label="Save" onClick={() => true} disabled={true} />
     </Section>
   );
@@ -19,4 +22,4 @@ const PersonalInfos = ({ title, items }: PersonalInfosProps) => {
 
 const Section = styled(Profile)``;
 
-export default PersonalInfos;
+export default withProperties(PersonalInfos, { Item });

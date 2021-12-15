@@ -1,20 +1,18 @@
 import styled from "@emotion/styled";
 import React from "react";
+import { withProperties } from "../../app/utils";
 import Logo from "./Logo";
-import NavbarProfile from "./NavbarProfile";
+import Profile from "./NavbarProfile";
 
 export type NavbarProps = {
   name: string;
   mail: string;
 };
 
-const NavbarComp = ({ name, mail }: NavbarProps) => {
+const NavbarComp = ({ children }: React.PropsWithChildren<{}>) => {
   return (
     <Navbar>
-      <div>
-        <Logo />
-        <NavbarProfile name={name} mail={mail} />
-      </div>
+      <div>{children}</div>
     </Navbar>
   );
 };
@@ -38,4 +36,4 @@ const Navbar = styled.nav`
   }
 `;
 
-export default NavbarComp;
+export default withProperties(NavbarComp, { Profile, Logo });

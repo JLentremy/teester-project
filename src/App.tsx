@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { DateTime } from "luxon";
-import React from "react";
 import "./App.css";
+import Body from "./components/Body";
 import Informations from "./components/Informations";
 import { ItemProps } from "./components/Informations/types";
 import { InputsType } from "./components/Input";
@@ -79,40 +79,43 @@ function App() {
 
   return (
     <AppComp>
-      <Navbar
-        name={`${profile.firstname} ${profile.lastname}`}
-        mail={profile.login_mail}
-      />
+      <Navbar>
+        <Navbar.Logo />
+        <Navbar.Profile
+          name={`${profile.firstname} ${profile.lastname}`}
+          mail={profile.login_mail}
+        />
+      </Navbar>
       <Body>
-        <div>
-          <Profile profile={profile} infos={infos} />
-          <Informations title="Edit personal information" items={items} />
-        </div>
+        <Profile name={`${profile.firstname} ${profile.lastname}`}>
+          {infos.map((info, key) => (
+            <Profile.Item
+              key={key}
+              icon={info.icon}
+              label={info.label}
+              value={info.value}
+            />
+          ))}
+        </Profile>
+        <Informations title="Edit personal information">
+          {items.map((item, key) => (
+            <Informations.Item
+              key={key}
+              title={item.title}
+              inputs={item.inputs}
+            />
+          ))}
+        </Informations>
       </Body>
     </AppComp>
   );
 }
 
-const Flex = styled.div`
+const AppComp = styled.div`
   display: flex;
-`;
-const FlexCol = styled(Flex)`
   flex-direction: column;
-`;
-const AppComp = styled(FlexCol)`
   min-height: 100vh;
   background-color: var(--bg-color);
-`;
-const Body = styled(FlexCol)`
-  align-items: center;
-  flex: 1 1 0%;
-  padding: var(--xl-size);
-
-  > div {
-    display: flex;
-    align-items: flex-start;
-    max-width: 80rem;
-  }
 `;
 
 export default App;

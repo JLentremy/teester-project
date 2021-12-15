@@ -1,37 +1,27 @@
 import styled from "@emotion/styled";
+import { withProperties } from "../../app/utils";
 import ProfilePicture from "../ProfilePicture";
 import Title from "../Title";
-import ProfileItem from "./ProfileItem";
-import { InfosProps, ProfileProps } from "./types";
+import Item from "./ProfileItem";
 
 type Props = {
-  profile: ProfileProps;
-  infos: InfosProps[];
+  name: string;
 };
 
-const ProfileComp = ({ profile, infos }: Props) => {
+const ProfileComp = ({ name, children }: React.PropsWithChildren<Props>) => {
   return (
     <Profile>
       <Media>
-        <ProfilePicture letter={profile.firstname[0]} />
-        <Title label={`${profile.firstname} ${profile.lastname}`} />
+        <ProfilePicture letter={name[0]} />
+        <Title label={name} />
       </Media>
-      {infos.map((info, key) => (
-        <ProfileItem
-          key={key}
-          icon={info.icon}
-          label={info.label}
-          value={info.value}
-        />
-      ))}
+      {children}
     </Profile>
   );
 };
 
-const Flex = styled.div`
+const FlexCol = styled.div`
   display: flex;
-`;
-const FlexCol = styled(Flex)`
   flex-direction: column;
 `;
 const Media = styled(FlexCol)`
@@ -50,4 +40,4 @@ export const Profile = styled(FlexCol)`
     var(--ring-shadow, 0 0 #0000), var(--shadow);
 `;
 
-export default ProfileComp;
+export default withProperties(ProfileComp, { Item });
