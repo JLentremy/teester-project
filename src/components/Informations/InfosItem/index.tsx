@@ -1,13 +1,12 @@
 import styled from "@emotion/styled";
-import React from "react";
 import Input, { InputProps } from "../../Input";
-import Title from "../../Title";
+import Text, { TextType } from "../../Text";
 import { ItemProps } from "../types";
 
 const InfosItemComp = ({ title, inputs }: ItemProps) => {
   return (
     <InfosItem>
-      <Title label={title} />
+      <Text label={title} type={TextType.title} accent />
       <Inputs>
         {inputs.map((input: InputProps, key) => (
           <Input

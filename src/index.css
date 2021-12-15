@@ -27,7 +27,7 @@ body {
 
   --sm-font: 0.75rem;
   --md-font: 0.875rem;
-  --xl-font: var(--xl-size);
+  --xl-font: 1rem;
 
   --roundness: 0.4rem;
   --full-roundness: 9999px;

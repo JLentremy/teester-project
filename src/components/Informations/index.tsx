@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { withProperties } from "../../app/utils";
 import Button from "../Button";
 import { Profile } from "../Profile";
-import Title from "../Title";
+import Text, { TextType } from "../Text";
 import Item from "./InfosItem";
 import { PersonalInfosProps } from "./types";
 
@@ -13,7 +13,7 @@ type Props = {
 const PersonalInfos = ({ title, children }: React.PropsWithChildren<Props>) => {
   return (
     <Section>
-      <Title label={title} />
+      <Text label={title} type={TextType.headtitle} accent />
       {children}
       <Button label="Save" onClick={() => true} disabled={true} />
     </Section>

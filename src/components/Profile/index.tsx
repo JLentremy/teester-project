@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { withProperties } from "../../app/utils";
 import Avatar from "../Avatar";
-import Title from "../Title";
+import Text, { TextType } from "../Text";
 import Item from "./ProfileItem";
 
 type Props = {
@@ -13,7 +13,7 @@ const ProfileComp = ({ name, children }: React.PropsWithChildren<Props>) => {
     <Profile>
       <Media>
         <Avatar letter={name[0]} />
-        <Title label={name} />
+        <Text label={name} type={TextType.headtitle} />
       </Media>
       {children}
     </Profile>

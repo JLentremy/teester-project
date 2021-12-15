@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import Icon from "../Icon";
-import Title from "../Title";
+import Text, { TextType } from "../Text";
 
 export enum InputsType {
   text = "text",
@@ -17,7 +17,7 @@ export type InputProps = {
 const InputComp = ({ label, value, type }: InputProps) => {
   return (
     <Input type={type}>
-      <Title label={label} />
+      <Text label={label} type={TextType.subtitle} />
       <InputContainer>
         <StyledInput type={type} defaultValue={value}></StyledInput>
         {type === InputsType.date && (
