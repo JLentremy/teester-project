@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
 import { withProperties } from "../../app/utils";
-import Logo from "./Logo";
+import Logo from "./NavbarLogo";
 import Profile from "./NavbarProfile";
 
 export type NavbarProps = {

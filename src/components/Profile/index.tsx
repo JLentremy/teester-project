@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { withProperties } from "../../app/utils";
-import ProfilePicture from "../ProfilePicture";
+import Avatar from "../Avatar";
 import Title from "../Title";
 import Item from "./ProfileItem";
 
@@ -12,7 +12,7 @@ const ProfileComp = ({ name, children }: React.PropsWithChildren<Props>) => {
   return (
     <Profile>
       <Media>
-        <ProfilePicture letter={name[0]} />
+        <Avatar letter={name[0]} />
         <Title label={name} />
       </Media>
       {children}

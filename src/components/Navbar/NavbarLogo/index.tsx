@@ -2,15 +2,15 @@ import styled from "@emotion/styled";
 import React from "react";
 import src from "../../../assets/logo.svg";
 
-const LogoComp = () => {
+const NavbarLogoComp = () => {
   return (
-    <Logo>
+    <NavbarLogo>
       <StyledImage src={src} />
-    </Logo>
+    </NavbarLogo>
   );
 };
 
-const Logo = styled.div`
+const NavbarLogo = styled.div`
   flex-shrink: 0;
 `;
 const StyledImage = styled.img`
@@ -20,4 +20,4 @@ const StyledImage = styled.img`
   max-width: 100%;
 `;
 
-export default LogoComp;
+export default NavbarLogoComp;

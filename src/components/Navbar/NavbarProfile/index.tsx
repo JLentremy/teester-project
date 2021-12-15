@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
 import React from "react";
 import { NavbarProps } from "..";
-import ProfilePicture from "../../ProfilePicture";
+import Avatar from "../../Avatar";
 
 const NavbarProfileComp = ({ name, mail }: NavbarProps) => {
   return (
     <NavbarProfile>
-      <ProfilePicture letter={name[0]} />
+      <Avatar letter={name[0]} />
       <div>
         <Name>{name}</Name>
         <Mail>{mail}</Mail>
