@@ -3,6 +3,7 @@ import React from "react";
 import "./App.css";
 import Informations from "./components/Informations";
 import { ItemProps } from "./components/Informations/types";
+import { InputsType } from "./components/Input";
 import Navbar from "./components/Navbar";
 import Profile from "./components/Profile";
 import { InfosProps, ProfileProps } from "./components/Profile/types";
@@ -50,19 +51,23 @@ function App() {
     {
       title: "General information",
       inputs: [
-        { label: "Firstname", type: "text", value: profile.firstname },
-        { label: "Lastname", type: "text", value: profile.lastname },
-        { label: "Birthdate", type: "date", value: profile.birthdate },
+        { label: "Firstname", type: InputsType.text, value: profile.firstname },
+        { label: "Lastname", type: InputsType.text, value: profile.lastname },
+        { label: "Birthdate", type: InputsType.date, value: profile.birthdate },
       ],
     },
     {
       title: "Contact information",
       inputs: [
-        { label: "Contact email", type: "text", value: profile.contact_mail },
-        { label: "Phone", type: "text", value: profile.phone },
-        { label: "Address", type: "text", value: profile.address },
-        { label: "City", type: "text", value: profile.city },
-        { label: "Country", type: "text", value: profile.country },
+        {
+          label: "Contact email",
+          type: InputsType.text,
+          value: profile.contact_mail,
+        },
+        { label: "Phone", type: InputsType.text, value: profile.phone },
+        { label: "Address", type: InputsType.address, value: profile.address },
+        { label: "City", type: InputsType.text, value: profile.city },
+        { label: "Country", type: InputsType.text, value: profile.country },
       ],
     },
   ];

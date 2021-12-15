@@ -1,6 +1,7 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faBirthdayCake,
+  faCalendar,
   faCheck,
   faEnvelope,
   faMapMarkerAlt,
@@ -8,6 +9,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-library.add(faCheck, faBirthdayCake, faMapMarkerAlt, faEnvelope, faPhoneAlt);
+library.add(
+  faCheck,
+  faBirthdayCake,
+  faMapMarkerAlt,
+  faEnvelope,
+  faPhoneAlt,
+  faCalendar
+);
 
 export default FontAwesomeIcon;
