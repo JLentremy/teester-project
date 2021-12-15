@@ -44,6 +44,13 @@ const TextComp = ({
           {label}
         </Title>
       );
+    case TextType.subtitle:
+      return (
+        <Subtitle {...styledProps}>
+          {iconLeft && <StyledIcon icon={iconLeft} aria-hidden="true" />}
+          {label}
+        </Subtitle>
+      );
     case TextType.large:
       return (
         <Large {...styledProps}>
@@ -88,13 +95,18 @@ const Large = styled(Text)`
 const Title = styled(Large)`
   margin-bottom: var(--sm-size);
 `;
+const Subtitle = styled(Text)`
+  font-size: calc(var(--md-font) / 1.125);
+  font-weight: 600;
+  margin-bottom: calc(var(--sm-size) / 2);
+`;
 const HeadTitle = styled(Large)`
   font-size: var(--xl-font);
   margin-top: calc(var(--sm-size) / 2);
   margin-bottom: var(--xl-size);
 `;
 const StyledIcon = styled(Icon)`
-  margin-right: var(--xs-size);
+  margin-right: calc(var(--sm-size) / 1.25);
 `;
 
 export default TextComp;
