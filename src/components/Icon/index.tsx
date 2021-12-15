@@ -1,31 +1,13 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
+  faBirthdayCake,
   faCheck,
-  faFire,
-  faFistRaised,
-  faHeart,
-  faLevelUpAlt,
-  faMinus,
-  faPlus,
-  faRunning,
-  faShieldAlt,
-  faTrashAlt,
-  faUserPlus,
+  faEnvelope,
+  faMapMarkerAlt,
+  faPhoneAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-library.add(
-  faPlus,
-  faMinus,
-  faTrashAlt,
-  faUserPlus,
-  faCheck,
-  faLevelUpAlt,
-  faHeart,
-  faFire,
-  faShieldAlt,
-  faFistRaised,
-  faRunning
-);
+library.add(faCheck, faBirthdayCake, faMapMarkerAlt, faEnvelope, faPhoneAlt);
 
 export default FontAwesomeIcon;

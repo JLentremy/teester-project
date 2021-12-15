@@ -27,6 +27,8 @@ const ProfileItem = styled(FlexCol)`
 const Label = styled(Flex)`
   font-weight: 600;
   font-size: var(--sm-font);
+  align-items: center;
+  margin-bottom: calc(var(--xs-size) / 2);
 `;
 const StyledIcon = styled(Icon)`
   margin-right: var(--xs-size);

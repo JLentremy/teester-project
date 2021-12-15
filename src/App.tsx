@@ -22,27 +22,27 @@ function App() {
   const infos: InfosProps[] = [
     {
       label: "Date of birth",
-      icon: "check",
+      icon: "birthday-cake",
       value: profile.birthdate,
     },
     {
       label: "Address",
-      icon: "check",
+      icon: "map-marker-alt",
       value: `${profile.address} ${profile.city} ${profile.country}`,
     },
     {
       label: "Contact email",
-      icon: "check",
+      icon: "envelope",
       value: profile.contact_mail,
     },
     {
       label: "Login email",
-      icon: "check",
+      icon: "envelope",
       value: profile.login_mail,
     },
     {
       label: "Phone number",
-      icon: "check",
+      icon: "phone-alt",
       value: profile.phone,
     },
   ];

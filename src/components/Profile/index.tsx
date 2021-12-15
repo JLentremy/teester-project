@@ -38,7 +38,7 @@ const Media = styled(FlexCol)`
   align-items: center;
   justify-content: center;
 
-  width: 20rem;
+  width: 18rem;
 `;
 export const Profile = styled(FlexCol)`
   margin: var(--sm-size);
