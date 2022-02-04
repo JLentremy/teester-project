@@ -24,15 +24,15 @@ export const AppProvider: React.FunctionComponent = ({ children }) => {
   const [profile, setProfile] = useState<ProfileProps | undefined>();
   const getProfile = useCallback(() => {
     const data = {
-      firstname: "Maxime",
-      lastname: "Baconnais",
-      birthdate: DateTime.local(1996, 7, 23),
-      address: "7 ruelle Lilly Reich",
+      firstname: "Jean",
+      lastname: "Neige",
+      birthdate: DateTime.local(1986, 12, 26),
+      address: "7 rue du Mur",
       city: "Nantes",
       country: "",
-      contact_mail: "maxime.baconnais@teester.com",
-      login_mail: "maxime.baconnais@teester.com",
-      phone: "+33658729674",
+      contact_mail: "jean.neige@mail.com",
+      login_mail: "jean.neige@mail.com",
+      phone: "+33456789100",
     };
     setProfile(data);
   }, []);
